@@ -8,7 +8,7 @@ var vigenery = {
     },
 
     decryptChar: function (messageIndex, keyIndex, alphabetLength) {
-        return (messageIndex - keyIndex + length) % alphabetLength;
+        return (messageIndex - keyIndex + alphabetLength) % alphabetLength;
     },
 
     execute: function (message, action, callback) {
