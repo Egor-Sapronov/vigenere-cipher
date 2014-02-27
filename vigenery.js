@@ -3,26 +3,29 @@ var vigenery = {
 
     alphabet: [],
 
-    encryptChar: function (c, k, length) {
-        return (c + k) % length;
+    encryptChar: function (messageIndex, keyIndex, alphabetLength) {
+        return (messageIndex + keyIndex) % alphabetLength;
     },
 
-    decryptChar: function (c, k, length) {
-        return (c - k + length) % length;
+    decryptChar: function (messageIndex, keyIndex, alphabetLength) {
+        return (messageIndex - keyIndex + length) % alphabetLength;
     },
 
     execute: function (message, action, callback) {
         var key = this.keyWord;
-
         while (key.length <= message.length) {
-            key = key + key;
+            key += this.keyWord;
         }
         key = key.slice(0, message.length);
+
         var result = '';
         for (var i = 0; i < message.length; i++) {
-            var currKey = action(this.alphabet.indexOf(message[i]), this.alphabet.indexOf(key[i]), this.alphabet.length);
-            result = result + this.alphabet[currKey];
+            var messageIndex = this.alphabet.indexOf(message[i]);
+            var keyIndex = this.alphabet.indexOf(key[i]);
+            var charIndex = action(messageIndex, keyIndex, this.alphabet.length);
+            result = result + this.alphabet[charIndex];
         }
+
         if (typeof callback == 'undefined') {
             return result;
         } else {
