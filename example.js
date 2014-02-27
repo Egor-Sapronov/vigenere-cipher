@@ -11,3 +11,4 @@ vigenery.execute('attackatdawn', vigenery.encryptChar, function (result) {
         console.log(result);
     })
 });
+
