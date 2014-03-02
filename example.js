@@ -2,20 +2,20 @@ var alphabet = function () {
     return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '];
 };
 
-vigenery.keyWord = 'lemon';
-vigenery.alphabet = alphabet();
-vigenery.execute('attackatdawn', vigenery.encryptChar, function (result) {
+vigenere.keyWord = 'lemon';
+vigenere.alphabet = alphabet();
+vigenere.execute('attackatdawn', vigenere.encryptChar, function (result) {
     console.log(result);
-    vigenery.execute(result, vigenery.decryptChar, function (result) {
+    vigenere.execute(result, vigenere.decryptChar, function (result) {
         console.log(result);
     })
-}); // Regular vigenery cipher
+}); // Regular vigenere cipher
 
-vigeneryModified.keyWord = 'lemon';
-vigeneryModified.execute('Безопасность', function (result) {
+vigenereModified.keyWord = 'lemon';
+vigenereModified.execute('Безопасность', function (result) {
     console.log(result);
-    vigeneryModified.execute(result, function (result) {
+    vigenereModified.execute(result, function (result) {
         console.log(result);
     })
-}); // Modified vigenery cipher
+}); // Modified vigenere cipher
 

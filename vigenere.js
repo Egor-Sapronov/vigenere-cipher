@@ -1,4 +1,4 @@
-var vigenery = {
+var vigenere = {
     keyWord: String,
 
     alphabet: [],

@@ -1,4 +1,4 @@
-var vigeneryModified = {
+var vigenereModified = {
     keyWord: String,
 
     execute: function (message, callback) {
