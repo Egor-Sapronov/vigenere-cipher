@@ -4,11 +4,18 @@ var alphabet = function () {
 
 vigenery.keyWord = 'lemon';
 vigenery.alphabet = alphabet();
-
 vigenery.execute('attackatdawn', vigenery.encryptChar, function (result) {
     console.log(result);
     vigenery.execute(result, vigenery.decryptChar, function (result) {
         console.log(result);
     })
-});
+}); // Regular vigenery cipher
+
+vigeneryModified.keyWord = 'lemon';
+vigeneryModified.execute('Безопасность', function (result) {
+    console.log(result);
+    vigeneryModified.execute(result, function (result) {
+        console.log(result);
+    })
+}); // Modified vigenery cipher
 
