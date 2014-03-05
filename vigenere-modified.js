@@ -7,13 +7,13 @@ var vigenereModified = {
             key += this.keyWord;
         }
 
-        var messageBytes = message.getBytes();
-        var keyBytes = key.getBytes();
+        var m = message.getBytes();
+        var k = key.getBytes();
 
         var result = '';
         for (var i = 0; i < message.length; i++) {
-            var currCharCode = messageBytes[i] ^ keyBytes[i];
-            var newChar = String.fromCharCode(currCharCode);
+            var c = m[i] ^ k[i];
+            var newChar = String.fromCharCode(c);
             result =result+ newChar;
         }
 
